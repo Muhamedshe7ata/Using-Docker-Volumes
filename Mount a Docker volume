@@ -1,0 +1,13 @@
+You can mount a Docker volume by using the -v option when running a docker run command. The syntax is:
+
+javascript
+
+docker run -d -p 8080:80 -v /host/path:/container/path <image_name>
+Here's an example:
+
+javascript
+
+docker run -d -p 8080:80 -v ~/my_data:/usr/share/nginx/html nginx
+This will start an Nginx container, map port 8080 on the host to port 80 in the container, and mount the host directory ~/my_data to the /usr/share/nginx/html 
+
+directory inside the container. The contents of the host directory will be accessible inside the container at the specified mount point.
